@@ -110,7 +110,11 @@ public class LanguageModel {
 			result += Math.log(prob);
 		}
 		
-		result += getLengthProbability(s.length(), 1.0);
+		// The below takes into account the length of the password
+		// result += getLengthProbability(s.length(), 1.0);
+		
+		// We list the average complexity of the n-grams across the string
+		result = result / s.length();
 
 		return result;
 	}

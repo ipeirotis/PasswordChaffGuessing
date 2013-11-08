@@ -46,10 +46,10 @@ public class EstimateLikelihood {
 
 		int N = 5;
 		// Read the training file in memory
-		List<String> training = readTextFile("C:\\Dropbox\\workspace\\Passwords\\data\\training_set_passwords.txt");
+		List<String> training = readTextFile("C:\\Dropbox\\git\\PasswordChaffGuessing\\data\\training_set_v0_passwords.txt");
 
 		// Read the test file in memory
-		List<String> test = readTextFile("C:\\Dropbox\\workspace\\Passwords\\data\\panos_test.tsv");
+		List<String> test = readTextFile("C:\\Dropbox\\git\\PasswordChaffGuessing\\data\\V0_panos.txt");
 
 		List<String> alphabet = new ArrayList<String>();
 		alphabet.addAll(training);
@@ -67,10 +67,10 @@ public class EstimateLikelihood {
 		}
 
 		List<String> result1 = listLikelihoods(test, lm, N);
-		writeTextFile(result1, "C:\\Dropbox\\workspace\\Passwords\\data\\test-likelihoods.txt");
+		writeTextFile(result1, "C:\\Dropbox\\git\\PasswordChaffGuessing\\data\\test-likelihoods_v0.txt");
 
 		List<String> result2 = listPredictions(test, lm);
-		writeTextFile(result2, "C:\\Dropbox\\workspace\\Passwords\\data\\test-predictions.txt");
+		writeTextFile(result2, "C:\\Dropbox\\git\\PasswordChaffGuessing\\data\\test-predictions_v0.txt");
 
 	}
 
